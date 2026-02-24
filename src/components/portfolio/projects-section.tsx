@@ -16,9 +16,9 @@ export function ProjectsSection() {
       description:
         "A taxi booking system with payment integration, inventory management, and admin dashboard.",
       image: Taxi,
-      technologies: ["Vite", "React", "Tailwind CSS", "Whatsapp API", "Vercel"],
-      demoUrl: ["#"],
-      githubUrl: ["#"],
+      technologies: ["Vite", "React", "Tailwind CSS", "Vercel"],
+      demoUrl: ["https://drop-taxi-booking-app.vercel.app"],
+      githubUrl: ["https://github.com/MohamedThawfeek/Drop-taxi-booking-app"],
       featured: true,
     },
     {
@@ -59,25 +59,25 @@ export function ProjectsSection() {
       githubUrl: ["https://github.com/MohamedThawfeek/Url-Shortener-frontend", "https://github.com/MohamedThawfeek/Url-Shortener-backend"],
       featured: false,
     },
-    {
-      title: "Blog Platform",
-      description:
-        "A modern blogging platform with content management system and SEO optimization.",
-      image: BlogImage,
-      technologies: [
-        "React",
-        "Node",
-        "Express",
-        "MongoDB",
-        "Electron JS",
-        "Tailwind CSS",
-        "OAuth",
-        "Vercel",
-      ],
-      demoUrl: ["#"],
-      githubUrl: ["#"],
-      featured: false,
-    },
+    // {
+    //   title: "Blog Platform",
+    //   description:
+    //     "A modern blogging platform with content management system and SEO optimization.",
+    //   image: BlogImage,
+    //   technologies: [
+    //     "React",
+    //     "Node",
+    //     "Express",
+    //     "MongoDB",
+    //     "Electron JS",
+    //     "Tailwind CSS",
+    //     "OAuth",
+    //     "Vercel",
+    //   ],
+    //   demoUrl: ["#"],
+    //   githubUrl: ["#"],
+    //   featured: false,
+    // },
     {
       title: "Chat Application",
       description:
@@ -93,8 +93,8 @@ export function ProjectsSection() {
         "Socket.io",
         "Vercel",
       ],
-      demoUrl: ["#"],
-      githubUrl: ["#"],
+      demoUrl: ["https://chat-app-react-lemon.vercel.app/login", "https://drive.google.com/file/d/1V2sz33-UFc475looyWkuLDs07QYyK9Tv/view?usp=drive_link"],
+      githubUrl: ["https://github.com/MohamedThawfeek/Chat-app-react", "https://github.com/MohamedThawfeek/chat-app-react-native", "https://github.com/MohamedThawfeek/chat-app-backend", "https://github.com/MohamedThawfeek/chat-app-desktop"],
       featured: false,
     },
     // {

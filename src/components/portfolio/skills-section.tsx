@@ -39,6 +39,10 @@ export function SkillsSection() {
         { name: "Aurora Payment System", level: 80, color: "from-green-500 to-green-600" },
         { name: "Pussy SMS System", level: 70, color: "from-green-500 to-green-600" },
         { name: "FCM (Firebase Cloud Messaging)", level: 85, color: "from-gray-600 to-gray-800" },
+        { name: "Cursor AI", level: 80, color: "from-yellow-500 to-orange-500" },
+        { name: "Antigravity AI", level: 80, color: "from-yellow-500 to-orange-500" },
+        { name: "Git Copilot AI", level: 80, color: "from-yellow-500 to-orange-500" },
+
 
       ]
     }
@@ -60,7 +64,7 @@ export function SkillsSection() {
             Technical <span className="text-gradient">Proficiency</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and the tools 
+            A comprehensive overview of my technical skills and the tools
             I use to bring ideas to life.
           </p>
         </div>
@@ -83,11 +87,11 @@ export function SkillsSection() {
                         </span>
                       </div>
                       <div className="relative">
-                        <Progress 
-                          value={skill.level} 
+                        <Progress
+                          value={skill.level}
                           className="h-2"
                         />
-                        <div 
+                        <div
                           className={`absolute top-0 left-0 h-2 bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
                           style={{ width: `${skill.level}%` }}
                         />
