@@ -50,8 +50,8 @@ export function SkillsSection() {
 
   const achievements = [
     { number: "3+", label: "Years Experience" },
-    { number: "10+", label: "Projects Completed" },
-    { number: "5+", label: "Happy Clients" },
+    { number: "2+", label: "Projects Completed" },
+    { number: "2+", label: "Happy Clients" },
     { number: "99%", label: "Success Rate" },
   ];
 
