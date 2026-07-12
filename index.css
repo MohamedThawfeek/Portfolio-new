@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Dark theme portfolio colors */
+    --background: 222 14% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 14% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 14% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Vibrant accent colors */
+    --primary: 262 83% 58%;
+    --primary-glow: 262 83% 68%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 19% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 195 100% 50%;
+    --accent-glow: 195 100% 60%;
+    --accent-foreground: 222 14% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 19% 20%;
+    --input: 217 19% 15%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    /* Portfolio specific colors */
+    --hero-gradient: linear-gradient(135deg, hsl(262 83% 58%), hsl(195 100% 50%));
+    --card-gradient: linear-gradient(135deg, hsl(222 14% 10%), hsl(217 19% 15%));
+    --text-gradient: linear-gradient(135deg, hsl(262 83% 68%), hsl(195 100% 60%));
+    
+    /* Shadows and effects */
+    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.3);
+    --shadow-accent: 0 0 40px hsl(195 100% 50% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(222 14% 8% / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Light theme fallback */
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 14% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 14% 8%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --shadow-card: 0 4px 20px -4px hsl(222 14% 8% / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Portfolio specific components */
+@layer components {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .text-gradient {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
