@@ -80,7 +80,7 @@ const skillTools = [
       { name: "AWS", mark: AWS, },
       { name: "GCP", mark: GCP, },
       { name: "Stripe", mark: Stripe, },
-      { name: "Pussy", mark: Pussy, },
+      { name: "Pushy", mark: Pussy, },
       { name: "FCM", mark: Firebase, },
 
 
