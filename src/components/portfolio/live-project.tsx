@@ -37,7 +37,7 @@ function LiveProjectCard({ project }: { project: LiveProject }) {
               <img
                 src={image}
                 alt={`${project.title} screenshot ${index + 1}`}
-                className="w-full h-[240px] sm:h-[340px] lg:h-[420px] object-fill"
+                className="w-full h-[240px] sm:h-[340px] lg:h-[420px] "
               />
             </SwiperSlide>
           ))}

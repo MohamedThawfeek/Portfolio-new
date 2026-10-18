@@ -22,6 +22,60 @@ import Img17 from "@/assets/sanas/image17.png";
 import Img18 from "@/assets/sanas/image18.png";
 import Img19 from "@/assets/sanas/image19.png";
 
+import {
+  d1,
+  d2,
+  d3,
+  d4,
+  d5,
+  d6,
+  d7,
+  d8,
+  d9,
+  d10,
+  d11,
+  d12,
+  d13,
+  d14,
+  d15,
+  d16,
+  d17,
+  d18,
+  d19,
+  d20,
+  d21,
+  d22,
+  d23,
+  d24,
+  d25,
+  d26,
+  d27,
+  d28,
+  d29,
+  d30,
+  d31,
+  d32,
+  d33,
+  d34,
+  k35,
+  k36,
+  k37,
+  k38,
+  k39,
+  k40,
+  t1,
+  t2,
+  w1,
+  w2,
+  w3,
+  w4,
+  p1,
+  p2,
+  p3,
+  p4,
+  p5
+} from "@/assets/jagopos/jagopos.js";
+
 // Single source of truth for the "Live Project" spotlight — used by both the
 // homepage spotlight section and the full-page detail view it links to.
 // Add or remove entries to change which projects are featured. Each project
@@ -32,9 +86,59 @@ export const liveProjects = [
     badge: "Live Project",
     title: "Jagopos (Restaurant Management)",
     tagline:
-      "A full-featured Restaurant Management & Billing System with a User Dashboard, Admin Dashboard, POS, Kitchen Display System (KDS), and Customer Display System (CDS). The application enables seamless menu management, real-time order processing, billing, and secure payments through Stripe and Aurora payment gateways. Orders are synchronized across all modules, and when an order is marked as Ready, the system automatically announces the customer name or order number for quick and efficient pickup.",
+      "A multi-tenant Restaurant Management & Billing System featuring customer and admin dashboards, POS, KDS, and CDS. It supports real-time order synchronization, menu and billing management, Stripe and Aurora payments, SMS notifications through AWS SNS and Twilio, and automated voice announcements when orders are ready.",
     // TODO: replace with real screenshots of the project (add/remove entries freely)
-    images: [Jagopos],
+    images: [Jagopos, d1,
+      d2,
+      d3,
+      d4,
+      d5,
+      d6,
+      d7,
+      d8,
+      d9,
+      d10,
+      d11,
+      d12,
+      d13,
+      d14,
+      d15,
+      d16,
+      d17,
+      d18,
+      d19,
+      d20,
+      d21,
+      d22,
+      d23,
+      d24,
+      d25,
+      d26,
+      d27,
+      d28,
+      d29,
+      d30,
+      d31,
+      d32,
+      d33,
+      d34,
+      k35,
+      k36,
+      k37,
+      k38,
+      k39,
+      k40,
+      t1,
+      t2,
+      w1,
+      w2,
+      w3,
+      w4,
+      p1,
+      p2,
+      p3,
+      p4,
+      p5],
     technologies: [
       "Vite",
       "React",
@@ -43,22 +147,44 @@ export const liveProjects = [
       "Node Js",
       "Express",
       "MongoDB",
-      "AWS",
+      "AWS SNS",
       "Pushy",
       "Stripe",
       "Aurora",
+      "OpenAI",
+      "GCP",
+      "CI/CD",
+      "html-pdf-node",
+      "FCM",
+      "Yup",
+      "Twilio",
+      "Tenent Database"
     ],
     demoUrl: null,
     githubUrl: null,
     fullDescription: `Restaurant Management & Billing System
 
-A comprehensive restaurant management solution that digitizes the entire restaurant workflow, from menu management and order placement to kitchen operations, billing, customer notifications, and payment processing. The system includes a User Dashboard, Admin Dashboard, Point of Sale (POS), Kitchen Display System (KDS), and Customer Display System (CDS), providing a seamless experience for customers, cashiers, kitchen staff, and administrators.
+    A comprehensive, multi-tenant restaurant management and billing platform designed to digitize and streamline the complete restaurant workflow—from menu management and order placement to kitchen operations, billing, customer communication, and payment processing.
 
-Customers can browse the menu, place dine-in, takeaway, or delivery orders, track their order status in real time, and make secure online payments using Stripe and Aurora payment gateways. The Admin Dashboard allows restaurant managers to manage menu items, categories, pricing, inventory, tables, staff, taxes, discounts, and monitor orders, payments, and sales through detailed reports and analytics.
+    The system supports multiple restaurants or business branches through a secure tenant-based database architecture. Each tenant has an isolated workspace for managing its menu, staff, customers, orders, inventory, payments, settings, and reports. This architecture protects tenant data while allowing the platform to scale efficiently as new restaurants and branches are added.
 
-The POS application enables staff to create and manage orders quickly, split or merge bills, apply discounts and taxes, generate invoices, and print or share digital receipts. The Kitchen Display System (KDS) receives orders instantly, helping kitchen staff organize and update order statuses from Pending to Preparing, Ready, and Served. The Customer Display System (CDS) provides real-time order progress and automatically announces the customer's name or order number through voice notifications when an order is ready for pickup.
+    The platform includes a Customer Dashboard, Admin Dashboard, Point of Sale (POS), Kitchen Display System (KDS), and Customer Display System (CDS), providing a connected experience for customers, cashiers, kitchen staff, managers, and administrators.
 
-With real-time synchronization across all modules, secure payment integration, automated order tracking, and voice-based customer notifications, the platform improves operational efficiency, reduces wait times, and delivers a smooth and modern restaurant management experience.`,
+    Customers can browse digital menus, customize items, and place dine-in, takeaway, or delivery orders. They can track order progress in real time and complete secure online payments using integrated payment gateways such as Stripe and Aurora. The system also stores customer preferences and order history to support faster repeat ordering and personalized service.
+
+    The Admin Dashboard allows restaurant owners and managers to control daily operations from a centralized interface. Administrators can manage menu items, categories, modifiers, pricing, inventory, tables, branches, staff roles, taxes, service charges, discounts, and promotional offers. They can also monitor orders, payments, refunds, expenses, and sales performance through detailed reports and analytics.
+
+    The POS application enables restaurant staff to create and update orders quickly, assign tables, handle takeaway or delivery orders, split or merge bills, transfer orders between tables, apply taxes and discounts, process multiple payment methods, generate invoices, and print or share digital receipts.
+
+    The Kitchen Display System receives new orders instantly and organizes them based on order type, priority, preparation time, and kitchen station. Kitchen staff can update each order through statuses such as Pending, Accepted, Preparing, Ready, Served, or Cancelled. These updates are synchronized across the POS, customer dashboard, admin panel, and display systems in real time.
+
+    The Customer Display System provides customers with live order information and progress updates. When an order is ready, the system can automatically announce the customer’s name or order number using voice notifications, making it especially useful for takeaway counters, food courts, cafés, and quick-service restaurants.
+    The platform integrates AWS SNS and Twilio to deliver automated SMS notifications. Customers can receive messages for order confirmation, payment confirmation, preparation updates, pickup readiness, delivery dispatch, order completion, cancellation, refunds, and promotional campaigns. Restaurant administrators can configure notification templates and choose the preferred messaging provider for each tenant or branch.
+
+    The multi-tenant architecture allows every restaurant to maintain its own branding, configuration, tax rules, menus, pricing, staff permissions, payment credentials, notification settings, and operational data. Role-based access control ensures that platform administrators, restaurant owners, branch managers, cashiers, kitchen staff, and delivery personnel can only access the features and information relevant to their responsibilities.
+
+    With real-time synchronization, secure tenant-level data isolation, inventory tracking, integrated online payments, automated billing, SMS communication through AWS SNS and Twilio, voice-based pickup announcements, and advanced reporting, the platform improves operational efficiency, reduces order errors and customer wait times, and delivers a smooth, scalable, and modern restaurant management experience.
+    `,
   },
   {
     // TODO: replace this whole entry with your next spotlight project
@@ -66,7 +192,7 @@ With real-time synchronization across all modules, secure payment integration, a
     badge: "Live Project",
     title: "Sanas Invite (Create Digital Invitations)",
     tagline:
-      "A comprehensive digital invitation platform that enables users to create, customize, send, and manage invitations for weddings, birthdays, corporate events, parties, and other special occasions. The system includes a User Dashboard, Admin Dashboard, and an interactive Guest RSVP Management module, providing a seamless experience for event organizers and guests.",
+      "Create, customize, and send digital invitations with automated emails, real-time RSVP tracking, and seamless guest management.",
     // TODO: replace with real screenshots of the project (add/remove entries freely)
     images: [
       Img,
@@ -97,35 +223,50 @@ With real-time synchronization across all modules, secure payment integration, a
       "Node Js",
       "Express",
       "MongoDB",
-      "AWS",
+      "AWS SNS",
       "Node Mailer",
       "GCP",
       "pdfkit",
       "ffmpeg",
+      "Google Auth",
+      "CI/CD",
+      "Cron",
+      "RBAC"
+
+      // "Generate Email Templates",
     ],
 
     demoUrl: null,
     githubUrl: "https://sanasinvite.com",
     fullDescription: `Digital Invitation Management Platform
 
-A complete digital invitation platform that enables users to create, customize, send, and manage invitations for weddings, birthdays, corporate events, parties, and other special occasions. The system includes a User Dashboard, Admin Dashboard, and an interactive Guest RSVP Management module, providing a seamless experience for event organizers and guests.
+A complete digital invitation platform that enables users to create, customize, send, and manage invitations for weddings, birthdays, corporate events, parties, and other special occasions. The platform includes role-based authentication, Google OAuth, a User Dashboard, an Admin Dashboard, and an interactive Guest RSVP Management module.
 
-The Admin Dashboard allows administrators to create and manage professionally designed invitation templates, organize them by category, and control template availability. Admins can update designs, manage users, monitor invitations, and view platform analytics.
+The role-based authentication system provides secure access based on user roles and permissions. Administrators can manage the entire platform, while regular users can access and manage only their own invitations, guests, templates, and RSVP data. Users can also register and sign in securely using their Google accounts.
 
-The User Dashboard enables users to browse available invitation templates, select a design, and fully customize it by editing text, images, colors, fonts, and event details. Users can save drafts, preview invitations, and generate personalized digital invitation cards.
+The Admin Dashboard allows administrators to create and manage professionally designed invitation templates, organize them by category, control template availability, manage users, monitor invitations, and view platform-wide analytics.
 
-Once the invitation is finalized, users can send invitations directly to guests via email. Each guest receives a personalized invitation containing event details and an RSVP option. Guests can respond by Accepting or Rejecting the invitation and specify the number of people who will attend the event.
+The User Dashboard enables users to browse invitation templates, select a design, and fully customize it by editing text, images, colors, fonts, and event details. Users can save drafts, preview their designs, and generate personalized digital invitation cards.
 
-Whenever a guest submits or updates their RSVP, the invitation owner receives an instant email notification. Users can track invitation responses in real time through a dashboard that displays:
+The platform dynamically generates responsive email templates using invitation and guest data. Once an invitation is finalized, users can send personalized emails directly to their guests. Each email contains the customized invitation, event information, guest details, and a unique RSVP option.
+
+Guests can Accept or Reject an invitation and specify the number of people attending. Whenever a guest submits or updates an RSVP, the invitation owner receives an instant email notification.
+
+Users can track invitation responses in real time through a dashboard that displays:
 
 * Total invitations sent
 * Accepted invitations
 * Rejected invitations
 * Pending responses
-* Total number of attendees confirmed by guests
-* Individual guest responses and RSVP history
+* Total confirmed attendees
+* Individual guest responses
+* RSVP update history
 
-The platform also provides RSVP analytics, helping event organizers estimate attendance, manage seating arrangements, plan catering, and monitor guest engagement. With real-time notifications, customizable invitation templates, email-based invitation delivery, and comprehensive RSVP tracking, the system simplifies event planning while delivering a modern and interactive digital invitation experience.`,
+The platform also provides RSVP analytics to help event organizers estimate attendance, arrange seating, plan catering, and monitor guest engagement.
+
+Automated cron jobs hosted on Google Cloud Platform handle scheduled processes such as invitation delivery, RSVP reminders, follow-up emails, event notifications, and other background tasks. This ensures reliable automation and timely communication without requiring manual intervention.
+
+With secure role-based access, Google authentication, dynamically generated email templates, automated GCP cron jobs, customizable invitation designs, real-time notifications, and comprehensive RSVP tracking, the platform delivers a modern and efficient digital invitation and event-management experience.`,
   },
 ];
 

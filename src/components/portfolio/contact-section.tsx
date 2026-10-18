@@ -7,8 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
-import {ClipLoader} from "react-spinners"
+import { ClipLoader } from "react-spinners";
+
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,37 +19,45 @@ export function ContactSection() {
   const [loader, setLoader] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
     setLoader(true);
-    emailjs
-      .sendForm(
-        "service_1j9iaal", // Your EmailJS service ID
-        "template_qiv7ghi", // Your EmailJS template ID
-        e.target as HTMLFormElement,
-        "GS40acueC5ka8QHZp" // Your EmailJS public key
-      )
-      .then(() => {
-        setLoader(false);
-        // Success toast or logic
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
-        });
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      })
-      .catch((error) => {
-        setLoader(false);
-        console.log("error", error);
 
-        // Error toast or logic
-        toast({
-          title: "Error",
-          description: "Failed to send message. Please try again later.",
-          variant: "destructive",
-        });
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = (await response.json()) as {
+        success: boolean;
+        message?: string;
+      };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to send message.");
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoader(false);
+    }
   };
 
   const handleChange = (
@@ -211,10 +219,14 @@ export function ContactSection() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    
                   />
                 </div>
-                <Button type="submit" className="w-full" size="lg">
+                <Button
+                  type="submit"
+                  className="w-full"
+                  size="lg"
+                  disabled={loader}
+                >
                   {!loader ? (
                     <>
                       <Send className="w-4 h-4 mr-2" />

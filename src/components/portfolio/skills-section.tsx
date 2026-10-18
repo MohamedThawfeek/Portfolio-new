@@ -24,6 +24,13 @@ import Pussy from "@/assets/skils/logo-light.png"
 import JWT from "@/assets/skils/JWT.svg"
 import OAuthLogo from "@/assets/skils/Oauth.svg"
 import PostMan from "@/assets/skils/postman.svg"
+import Python from "@/assets/skils/python.svg"
+import Ml from "@/assets/skils/ml.svg"
+import DL from "@/assets/skils/dl.svg"
+import NLP from "@/assets/skils/nlp.svg"
+import OpenAI from "@/assets/skils/openai.svg"
+import Gemini from "@/assets/skils/gemini.svg"
+
 
 
 type Skill = {
@@ -47,6 +54,7 @@ const skillFrontend = [
       { name: "Redux", mark: Redux, },
       { name: "React Native", mark: ReactNative, },
       { name: "Electron", mark: Electron, },
+      { name: "Python", mark: Python, }
     ]
   },
 
@@ -65,6 +73,9 @@ const skillBackend = [
       { name: "OAuth", mark: OAuthLogo, },
       { name: "JWT", mark: JWT, },
       { name: "PostMan", mark: PostMan, },
+       { name: "Machine Learning", mark: Ml, },
+      { name: "Deep Learning", mark: DL, },
+      { name: "Natural Language Processing", mark: NLP, },
     ]
   },
 
@@ -80,8 +91,10 @@ const skillTools = [
       { name: "AWS", mark: AWS, },
       { name: "GCP", mark: GCP, },
       { name: "Stripe", mark: Stripe, },
-      { name: "Pushy", mark: Pussy, },
+      { name: "Pussy", mark: Pussy, },
       { name: "FCM", mark: Firebase, },
+      { name: "OpenAI", mark: OpenAI, },
+      { name: "Gemini", mark: Gemini, }
 
 
     ]
@@ -89,9 +102,9 @@ const skillTools = [
 ];
 
 const achievements = [
-  { number: "3+", label: "Years Experience" },
-  { number: "2+", label: "Projects Completed" },
-  { number: "2+", label: "Happy Clients" },
+  { number: "4+", label: "Years Experience" },
+  { number: "3+", label: "Projects Completed" },
+  { number: "3+", label: "Happy Clients" },
   { number: "99%", label: "Success Rate" },
 ];
 

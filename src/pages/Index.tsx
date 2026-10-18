@@ -8,7 +8,8 @@ import { LiveProjectSection } from "@/components/portfolio/live-project";
 import { SkillsSection } from "@/components/portfolio/skills-section";
 import { BlogSection } from "@/components/portfolio/blog-section";
 import { ContactSection } from "@/components/portfolio/contact-section";
-import Resume from "@/assets/My Resume.pdf";
+import { PortfolioChat } from "@/components/portfolio/portfolio-chat";
+import Resume from "@/assets/My Resumes.pdf";
 
 const Index = () => {
   const handleDownloadCV = () => {
@@ -49,6 +50,7 @@ const Index = () => {
           </p>
         </div>
       </footer>
+      <PortfolioChat />
     </div>
   );
 };

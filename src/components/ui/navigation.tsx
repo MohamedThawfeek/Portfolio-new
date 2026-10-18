@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, FileText } from "lucide-react";
 
 interface NavigationProps {
   onDownloadCV: () => void;
@@ -59,6 +60,13 @@ export function Navigation({ onDownloadCV, onContactScroll }: NavigationProps) {
                 {item.label}
               </button>
             ))}
+            {/* <Link
+              to="/resume"
+              className="flex items-center gap-2 transition-colors hover:text-primary"
+            >
+              <FileText className="h-4 w-4" />
+              Resume
+            </Link> */}
             <Button variant="hero" onClick={onDownloadCV} className="ml-4">
               <Download className="w-4 h-4 mr-2" />
               Download CV
@@ -84,6 +92,14 @@ export function Navigation({ onDownloadCV, onContactScroll }: NavigationProps) {
                   {item.label}
                 </button>
               ))}
+              <Link
+                to="/resume"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-2 text-left transition-colors hover:text-primary"
+              >
+                <FileText className="h-4 w-4" />
+                Preview Resume
+              </Link>
               <Button
                 variant="hero"
                 onClick={onDownloadCV}

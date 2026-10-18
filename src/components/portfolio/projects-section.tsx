@@ -9,13 +9,22 @@ import "swiper/css/pagination";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, AppWindowMac, AppWindowIcon, Webhook, AppWindowMacIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  AppWindowMac,
+  AppWindowIcon,
+  Webhook,
+  AppWindowMacIcon,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import BlogImage from "@/assets/blog.png";
 import PasswordManager from "@/assets/passwordmanager.jpeg";
 import URLShortener from "@/assets/urlshortener.jpg";
 import SpeechText from "@/assets/Speech-Text.png";
 import FoodRecipe from "@/assets/food-receipe.png";
-
+import HRMS from "@/assets/hrms.png";
 
 import Taxi from "@/assets/taxi.jpeg";
 import Chat from "@/assets/chat-app.png";
@@ -27,6 +36,32 @@ export function ProjectsSection() {
   const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);
 
   const projects = [
+    {
+      title: "Human Resource Management System",
+      description:
+        "An AI-powered, multi-tenant HRMS SaaS platform featuring employee management, attendance, leave tracking, and payroll processing. Includes recruitment, performance evaluation, role-based access control, and subscription management. Built with the MERN stack and AI-powered HR automation.",
+      image: HRMS,
+      technologies: [
+        "Vite",
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Stripe",
+        "Ollama AI",
+        "REST API",
+        "Tailwind CSS",
+        "JWT Authentication",
+        "Role-Based Access Control (RBAC)",
+        "Multi-Tenant Architecture",
+      ],
+      demoUrl: [
+        "https://hrms-admin-xi.vercel.app",
+        "https://hrms-landing-page-tau.vercel.app",
+      ],
+      githubUrl: ["https://github.com/MohamedThawfeek/hrms-full-stack"],
+      featured: true,
+    },
     {
       title: "DropTaxi App",
       description:
@@ -53,7 +88,10 @@ export function ProjectsSection() {
         "Vercel",
       ],
       demoUrl: ["https://password-manager-frontend-eight.vercel.app"],
-      githubUrl: ["https://github.com/MohamedThawfeek/Password-Manager-Frontend", "https://github.com/MohamedThawfeek/Password-Manager-Backend"],
+      githubUrl: [
+        "https://github.com/MohamedThawfeek/Password-Manager-Frontend",
+        "https://github.com/MohamedThawfeek/Password-Manager-Backend",
+      ],
       featured: true,
     },
     {
@@ -72,7 +110,10 @@ export function ProjectsSection() {
         "Vercel",
       ],
       demoUrl: ["https://url-shortener-frontend-tau-smoky.vercel.app"],
-      githubUrl: ["https://github.com/MohamedThawfeek/Url-Shortener-frontend", "https://github.com/MohamedThawfeek/Url-Shortener-backend"],
+      githubUrl: [
+        "https://github.com/MohamedThawfeek/Url-Shortener-frontend",
+        "https://github.com/MohamedThawfeek/Url-Shortener-backend",
+      ],
       featured: false,
     },
     {
@@ -80,13 +121,11 @@ export function ProjectsSection() {
       description:
         "Convert speech into text with high accuracy and translate it into multiple languages in real time. Save, copy, or share your transcriptions with ease. A simple and powerful tool for breaking language barriers.",
       image: SpeechText,
-      technologies: [
-        "Next Js",
-        "Tailwind CSS",
-        "Vercel",
-      ],
+      technologies: ["Next Js", "Tailwind CSS", "Vercel"],
       demoUrl: ["https://speech-to-text-indol.vercel.app"],
-      githubUrl: ["https://github.com/MohamedThawfeek/speech-to-text-all-language"],
+      githubUrl: [
+        "https://github.com/MohamedThawfeek/speech-to-text-all-language",
+      ],
       featured: false,
     },
     {
@@ -94,11 +133,7 @@ export function ProjectsSection() {
       description:
         "Discover thousands of delicious recipes from around the world. Follow easy step-by-step instructions and cook with confidence. Perfect for beginners and experienced home chefs alike.",
       image: FoodRecipe,
-      technologies: [
-        "React Js",
-        "Tailwind CSS",
-        "Vercel",
-      ],
+      technologies: ["React Js", "Tailwind CSS", "Vercel"],
       demoUrl: ["https://food-recipe-swart-psi.vercel.app"],
       githubUrl: ["https://github.com/MohamedThawfeek/Food_Recipe"],
       featured: false,
@@ -135,7 +170,7 @@ export function ProjectsSection() {
       ],
       githubUrl: ["https://github.com/MohamedThawfeek/image-resize-electronJS"],
       featured: false,
-    }
+    },
   ];
 
   return (
@@ -181,15 +216,26 @@ export function ProjectsSection() {
                     {Array.isArray(project.demoUrl) &&
                       project.demoUrl.map((url: string, index: number) => {
                         return (
-                          <Button key={index} size="sm" variant="secondary" asChild>
+                          <Button
+                            key={index}
+                            size="sm"
+                            variant="secondary"
+                            asChild
+                          >
                             <a
                               href={url}
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              {
-                                project.title === "Image Rezizer" ? index === 0 ? <AppWindowIcon className="w-4 h-4" /> : <AppWindowMacIcon className="w-4 h-4" /> : <Webhook className="w-4 h-4" />
-                              }
+                              {project.title === "Image Rezizer" ? (
+                                index === 0 ? (
+                                  <AppWindowIcon className="w-4 h-4" />
+                                ) : (
+                                  <AppWindowMacIcon className="w-4 h-4" />
+                                )
+                              ) : (
+                                <Webhook className="w-4 h-4" />
+                              )}
                             </a>
                           </Button>
                         );
@@ -207,15 +253,13 @@ export function ProjectsSection() {
                         );
                       })
                     } */}
-
-
                   </div>
                 </div>
                 <CardHeader>
                   <CardTitle className="text-xl">{project.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-4 line-clamp-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -258,7 +302,6 @@ export function ProjectsSection() {
             <ChevronRight className="w-4 h-4" />
           </Button>
         </div> */}
-
       </div>
 
       {/* Theme the Swiper pagination to match the site's design tokens */}

@@ -20,7 +20,7 @@ This project is deployed on Vercel. Visit the live site: [View Live](https://you
 
 Before you begin, ensure you have the following installed:
 
-- **Node.js** (v18 or higher) - [Download Node.js](https://nodejs.org/)
+- **Node.js** (v20 or higher) - [Download Node.js](https://nodejs.org/)
 - **npm** (comes with Node.js) or **bun** (optional)
 
 If you need to manage multiple Node.js versions, consider using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
@@ -41,19 +41,51 @@ npm install
 # or if you're using bun
 bun install
 
-# Step 4: Start the development server
+# Step 4: Configure the contact-form email server
+cp .env.example .env
+
+# Step 5: Start the React app and email server
 npm run dev
 # or with bun
 bun run dev
 ```
 
-The development server will start at `http://localhost:5173` (or the next available port).
+The React app will start at `http://localhost:3000` and the email API at
+`http://localhost:3001`.
+
+## Contact Form Email Setup
+
+The browser sends contact-form submissions to `/api/send-email`. Nodemailer
+sends the message from the server, so the Gmail credentials are never included
+in the React bundle.
+
+1. Enable two-step verification on the Google account used to send email.
+2. Create a Google App Password for Mail.
+3. Copy `.env.example` to `.env` and set:
+
+```env
+EMAIL_USER=your-gmail-address@gmail.com
+EMAIL_APP_PASSWORD=your-16-character-google-app-password
+EMAIL_TO=where-you-want-to-receive-messages@gmail.com
+CLIENT_ORIGIN=http://localhost:3000
+PORT=3001
+```
+
+Use the generated App Password, not your normal Gmail password. Do not commit
+the `.env` file.
+
+For Vercel, add `EMAIL_USER`, `EMAIL_APP_PASSWORD`, and `EMAIL_TO` under
+Project Settings → Environment Variables. The `api/send-email.ts` serverless
+function handles the production request.
 
 ## 📜 Available Scripts
 
-- `npm run dev` - Start the development server
+- `npm run dev` - Start the React app and local email server
+- `npm run dev:client` - Start only the React app
+- `npm run dev:server` - Start only the local email server
 - `npm run build` - Build for production
 - `npm run build:dev` - Build in development mode
+- `npm run typecheck` - Check the frontend and server TypeScript
 - `npm run preview` - Preview the production build locally
 - `npm run lint` - Run ESLint to check for code issues
 

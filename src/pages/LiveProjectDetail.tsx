@@ -50,14 +50,14 @@ const LiveProjectDetail = () => {
             autoplay={{ delay: 4000, disableOnInteraction: false }}
             thumbs={{ swiper: thumbsSwiper }}
             loop={liveProject.images.length > 1}
-            className="live-project-detail-swiper rounded-2xl overflow-hidden border border-border shadow-xl"
+            className="live-project-detail-swiper rounded-2xl overflow-hidden  shadow-xl"
           >
             {liveProject.images.map((image, index) => (
               <SwiperSlide key={index}>
                 <img
                   src={image}
                   alt={`${liveProject.title} screenshot ${index + 1}`}
-                  className="w-full h-[280px] sm:h-[420px] lg:h-[560px] object-cover"
+                  className="w-full h-[280px] sm:h-[420px] lg:h-[560px] sm:object-fill 2xl:object-contain xl:object-contain lg:object-contain md:object-contain"
                 />
               </SwiperSlide>
             ))}
@@ -81,7 +81,7 @@ const LiveProjectDetail = () => {
                   <img
                     src={image}
                     alt={`${liveProject.title} thumbnail ${index + 1}`}
-                    className="w-full h-16 md:h-20 object-cover rounded-lg border border-border opacity-60 transition-opacity"
+                    className="hidden 2xl:block xl:block lg:block w-full h-16 md:h-[150px]  rounded-lg border border-border opacity-60 transition-opacity"
                   />
                 </SwiperSlide>
               ))}
