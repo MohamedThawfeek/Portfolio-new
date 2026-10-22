@@ -10,25 +10,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  ExternalLink,
-  Github,
-  AppWindowMac,
   AppWindowIcon,
   Webhook,
   AppWindowMacIcon,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
-import BlogImage from "@/assets/blog.png";
-import PasswordManager from "@/assets/passwordmanager.jpeg";
-import URLShortener from "@/assets/urlshortener.jpg";
-import SpeechText from "@/assets/Speech-Text.png";
-import FoodRecipe from "@/assets/food-receipe.png";
-import HRMS from "@/assets/hrms.png";
-
-import Taxi from "@/assets/taxi.jpeg";
-import Chat from "@/assets/chat-app.png";
-import ImageResizer from "@/assets/image-resize.jpeg";
+import images from "@/assets";
 
 export function ProjectsSection() {
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
@@ -40,7 +26,7 @@ export function ProjectsSection() {
       title: "Human Resource Management System",
       description:
         "An AI-powered, multi-tenant HRMS SaaS platform featuring employee management, attendance, leave tracking, and payroll processing. Includes recruitment, performance evaluation, role-based access control, and subscription management. Built with the MERN stack and AI-powered HR automation.",
-      image: HRMS,
+      image: [...images.hrms],
       technologies: [
         "Vite",
         "React.js",
@@ -54,6 +40,7 @@ export function ProjectsSection() {
         "JWT Authentication",
         "Role-Based Access Control (RBAC)",
         "Multi-Tenant Architecture",
+        "GCP Cloud Storage",
       ],
       demoUrl: [
         "https://hrms-admin-xi.vercel.app",
@@ -63,10 +50,31 @@ export function ProjectsSection() {
       featured: true,
     },
     {
+      title: "Task Manager",
+      description:
+        "A full-stack task management application with project organization, team collaboration, task assignments, priority tracking, due dates, and todo checklists. Features JWT authentication, role-based access control, and real-time task progress tracking.",
+      image: [...images.taskmanager],
+      technologies: [
+        "Vite",
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Swiperjs",
+        "REST API",
+        "Tailwind CSS",
+        "JWT Authentication",
+        "Role-Based Access Control (RBAC)",
+      ],
+      demoUrl: ["https://task-manager-frontend-nine-sigma.vercel.app"],
+      githubUrl: ["https://github.com/MohamedThawfeek/task-manager"],
+      featured: true,
+    },
+    {
       title: "DropTaxi App",
       description:
         "A taxi booking system with payment integration, inventory management, and admin dashboard.",
-      image: Taxi,
+      image: [...images.taxiBooking],
       technologies: ["Vite", "React", "Tailwind CSS", "Vercel"],
       demoUrl: ["https://drop-taxi-booking-app.vercel.app"],
       githubUrl: ["https://github.com/MohamedThawfeek/Drop-taxi-booking-app"],
@@ -76,7 +84,7 @@ export function ProjectsSection() {
       title: "Password Manager App",
       description:
         "A password manager application with password generation and storage features.",
-      image: PasswordManager,
+      image: [...images.passwordManager],
       technologies: [
         "Vite",
         "React",
@@ -98,7 +106,7 @@ export function ProjectsSection() {
       title: "URL Shortener App",
       description:
         "A URL shortener application with URL shortening and tracking features.",
-      image: URLShortener,
+      image: [...images.urlShortener],
       technologies: [
         "Vite",
         "React",
@@ -120,7 +128,7 @@ export function ProjectsSection() {
       title: "Speech to Text App",
       description:
         "Convert speech into text with high accuracy and translate it into multiple languages in real time. Save, copy, or share your transcriptions with ease. A simple and powerful tool for breaking language barriers.",
-      image: SpeechText,
+      image: [...images.speechText],
       technologies: ["Next Js", "Tailwind CSS", "Vercel"],
       demoUrl: ["https://speech-to-text-indol.vercel.app"],
       githubUrl: [
@@ -132,37 +140,17 @@ export function ProjectsSection() {
       title: "Food Recipe App",
       description:
         "Discover thousands of delicious recipes from around the world. Follow easy step-by-step instructions and cook with confidence. Perfect for beginners and experienced home chefs alike.",
-      image: FoodRecipe,
+      image: [...images.foodreceipe],
       technologies: ["React Js", "Tailwind CSS", "Vercel"],
       demoUrl: ["https://food-recipe-swart-psi.vercel.app"],
       githubUrl: ["https://github.com/MohamedThawfeek/Food_Recipe"],
       featured: false,
     },
-    // {
-    //   title: "Chat Application",
-    //   description:
-    //     "Real-time messaging application with group chats and file sharing capabilities.",
-    //   image: Chat,
-    //   technologies: [
-    //     "React",
-    //     "React Native",
-    //     "Electron JS",
-    //     "Node",
-    //     "Express",
-    //     "MongoDB",
-    //     "Socket.io",
-    //     "Vercel",
-    //   ],
-    //   demoUrl: ["https://chat-app-react-lemon.vercel.app/login", "https://drive.google.com/file/d/1V2sz33-UFc475looyWkuLDs07QYyK9Tv/view?usp=drive_link"],
-    //   githubUrl: ["https://github.com/MohamedThawfeek/Chat-app-react", "https://github.com/MohamedThawfeek/chat-app-react-native", "https://github.com/MohamedThawfeek/chat-app-backend", "https://github.com/MohamedThawfeek/chat-app-desktop"],
-    //   featured: false,
-    // },
-
     {
       title: "Image Rezizer",
       description:
         "Image rezizer application with image compression and optimization.",
-      image: ImageResizer,
+      image: [...images.imageResize],
       technologies: ["Electron JS", "Tailwind CSS"],
       demoUrl: [
         "https://drive.usercontent.google.com/download?id=1xbqHqf7YyYaZRh18sI57Ae0wRJCNiBYo&export=download&authuser=0",
@@ -206,13 +194,29 @@ export function ProjectsSection() {
             <SwiperSlide key={index} className="h-auto">
               <Card className="card-hover group overflow-hidden h-full cursor-move">
                 <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-fill group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {Array.isArray(project.image) && (
+                    <Swiper
+                      modules={[Pagination]}
+                      nested
+                      pagination={false}
+                      allowTouchMove={project.image.length > 1}
+                      watchOverflow
+                      className="project-images-swiper h-48"
+                    >
+                      {project.image.map((image, imageIndex) => (
+                        <SwiperSlide key={image}>
+                          <img
+                            src={image}
+                            alt={`${project.title} screenshot ${imageIndex + 1}`}
+                            loading="lazy"
+                            className="h-48 w-full object-fill transition-transform duration-300"
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  )}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute bottom-4 right-4 z-10 flex space-x-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     {Array.isArray(project.demoUrl) &&
                       project.demoUrl.map((url: string, index: number) => {
                         return (

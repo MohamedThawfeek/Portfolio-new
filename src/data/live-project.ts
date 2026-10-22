@@ -1,7 +1,3 @@
-import Taxi from "@/assets/taxi.jpeg";
-import Ecommerce from "@/assets/ecommerce.jpeg";
-import Jagopos from "@/assets/Jagopos.png";
-
 import Img from "@/assets/sanas/image.png";
 import Img2 from "@/assets/sanas/image2.png";
 import Img3 from "@/assets/sanas/image3.png";
@@ -88,7 +84,7 @@ export const liveProjects = [
     tagline:
       "A multi-tenant Restaurant Management & Billing System featuring customer and admin dashboards, POS, KDS, and CDS. It supports real-time order synchronization, menu and billing management, Stripe and Aurora payments, SMS notifications through AWS SNS and Twilio, and automated voice announcements when orders are ready.",
     // TODO: replace with real screenshots of the project (add/remove entries freely)
-    images: [Jagopos, d1,
+    images: [d1,
       d2,
       d3,
       d4,
