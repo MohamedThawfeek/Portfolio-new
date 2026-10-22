@@ -1,51 +1,87 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Palette, Globe, Smartphone, Database, Zap } from "lucide-react";
+import { Code, Palette, Globe, Smartphone, Database, Zap, Monitor, Layers } from "lucide-react";
 
 export function ServicesSection() {
   const services = [
     {
       icon: Code,
-      title: "Web Development",
-      description: "Creating responsive and interactive user interfaces with React, Vite, and modern CSS frameworks.",
-      technologies: ["React", "Vite.js", "Tailwind CSS"]
-    },
-    {
-      icon: Code,
-      title: "Mobile App Development",
-      description: "Creating responsive and interactive user interfaces with React Native.js, Expo, and modern CSS frameworks.",
-      technologies: ["React Native.js", "Expo", "Tailwind CSS"]
-    },
-    {
-      icon: Code,
-      title: "Desktop App Development",
-      description: "Creating responsive and interactive user interfaces with Electron JS, and modern CSS frameworks.",
-      technologies: ["Electron JS", "Tailwind CSS"]
-    },
-    {
-      icon: Database,
-      title: "Backend Development", 
-      description: "Building robust server-side applications and APIs with Node.js, Python, and database integration.",
-      technologies: ["Node.js", "Express", "MongoDB", "PostgreSQL", "Prisma"]
-    },
-    {
-      icon: Globe,
-      title: "Full Stack Applications",
-      description: "End-to-end web application development from concept to deployment.",
-      technologies: ["MERN Stack", "Next.js", "GCP", "AWS"]
+      title: "Frontend Development",
+      description:
+        "Building modern, responsive, and high-performance web applications using React.js, Vite, and Tailwind CSS with reusable components and seamless user experiences.",
+      technologies: [
+        "React.js",
+        "JavaScript",
+        "Vite",
+        "Tailwind CSS",
+        "Redux Toolkit",
+      ],
     },
     {
       icon: Smartphone,
-      title: "Responsive Design",
-      description: "Ensuring your applications work perfectly across all devices and screen sizes.",
-      technologies: ["Mobile First", "PWA", "Cross-browser", "Accessibility"]
+      title: "Mobile App Development",
+      description:
+        "Developing cross-platform mobile applications for Android and iOS using React Native and Expo, with API integration and intuitive user interfaces.",
+      technologies: [
+        "React Native",
+        "Expo",
+        "JavaScript",
+        "REST APIs",
+      ],
     },
     {
-      icon: Zap,
-      title: "Performance Optimization",
-      description: "Optimizing applications for speed, SEO, and better user experience.",
-      technologies: ["Core Web Vitals", "SEO", "Performance", "Analytics"]
-    }
+      icon: Monitor,
+      title: "Desktop App Development",
+      description:
+        "Creating cross-platform desktop applications using Electron.js and React.js with modern interfaces and desktop-specific functionality.",
+      technologies: [
+        "Electron.js",
+        "React.js",
+        "JavaScript",
+        "Tailwind CSS",
+      ],
+    },
+    {
+      icon: Database,
+      title: "Backend & API Development",
+      description:
+        "Designing scalable backend systems and secure RESTful APIs with authentication, role-based access control, database integration, and efficient server-side architecture.",
+      technologies: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        // "PostgreSQL",
+        "Prisma",
+        "JWT",
+      ],
+    },
+    {
+      icon: Layers,
+      title: "Full Stack Development",
+      description:
+        "Developing complete MERN Stack applications with secure authentication, real-time functionality, payment integrations, and scalable frontend and backend architectures.",
+      technologies: [
+        "MERN Stack",
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "REST APIs",
+        "Stripe",
+      ],
+    },
+    {
+      icon: Globe,
+      title: "Cloud Deployment & DevOps",
+      description:
+        "Deploying and maintaining web applications using cloud platforms, automated CI/CD pipelines, and modern hosting solutions for reliable application delivery.",
+      technologies: [
+        "AWS",
+        "GCP",
+        "Vercel",
+        "GitHub Actions",
+        "CI/CD",
+      ],
+    },
   ];
 
   return (
@@ -57,7 +93,7 @@ export function ServicesSection() {
             Solutions That <span className="text-gradient">Drive Results</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I provide comprehensive web development services to help businesses 
+            I provide comprehensive web development services to help businesses
             establish their online presence and achieve their digital goals.
           </p>
         </div>

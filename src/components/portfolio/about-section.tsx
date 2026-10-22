@@ -1,24 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code2, Palette, Zap } from "lucide-react";
+import { Code2, Database, Zap } from "lucide-react";
 
 export function AboutSection() {
   const highlights = [
     {
       icon: Code2,
       title: "Full Stack Development",
-      description: "Building end-to-end solutions with modern technologies"
+      description:
+        "Building scalable, secure, and high-performance applications using the MERN Stack.",
     },
     {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Creating beautiful and intuitive user experiences"
+      icon: Database,
+      title: "Backend & API Development",
+      description:
+        "Developing robust RESTful APIs with secure authentication, role-based access control, and database integration.",
     },
     {
       icon: Zap,
       title: "Performance Optimization",
-      description: "Delivering fast and efficient web applications"
-    }
+      description:
+        "Optimizing frontend and backend performance to deliver fast, responsive, and efficient applications.",
+    },
   ];
 
   return (
@@ -29,23 +32,18 @@ export function AboutSection() {
           <div className="animate-fade-in">
             <Badge variant="outline" className="mb-4">About Me</Badge>
             <h2 className="text-4xl font-bold mb-6">
-              Crafting Digital Experiences with 
+              Building Scalable Digital Solutions with
               <span className="text-gradient"> Passion & Precision</span>
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I'm Mohamed Thawfeek, a passionate full-stack web developer with over 3 years 
-                of experience creating digital solutions that make a difference. Based in India, 
-                I specialize in building modern web applications that are both beautiful and functional.
+                I’m Mohamed Thawfeek, a Full Stack Developer based in India with over 4.5 years of experience building scalable, secure, and high-performance web applications. I specialize in MERN Stack development using React.js, Node.js, Express.js, and MongoDB, with expertise in RESTful APIs, JWT authentication, role-based access control, and database management.
               </p>
               <p>
-                My journey in web development started with a curiosity about how things work on the web, 
-                and it has evolved into a career where I get to solve complex problems and bring 
-                creative ideas to life every day.
+                Throughout my career, I’ve contributed to production applications, including JagoPOS, a multi-tenant restaurant management and POS system, and Sanas Invite, a digital invitation and RSVP management platform. My experience covers end-to-end application development, payment gateway integration, real-time functionality, and cloud deployment.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies, contributing to 
-                open-source projects, or sharing my knowledge with the developer community.
+                I’m passionate about solving complex technical challenges, writing clean and maintainable code, and continuously improving my development skills. Beyond my professional work, I explore emerging technologies and build personal projects, including an HRMS SaaS application, to expand my expertise.
               </p>
             </div>
           </div>
