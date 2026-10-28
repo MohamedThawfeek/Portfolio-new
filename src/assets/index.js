@@ -1,3 +1,16 @@
+//whatsapp manager api
+import w1 from "./whatsapp-manager-api/w1.png";
+import w2 from "./whatsapp-manager-api/w2.png";
+import w3 from "./whatsapp-manager-api/w3.png";
+import w4 from "./whatsapp-manager-api/w4.png";
+import w5 from "./whatsapp-manager-api/w5.png";
+import w6 from "./whatsapp-manager-api/w6.png";
+import w7 from "./whatsapp-manager-api/w7.png";
+import w8 from "./whatsapp-manager-api/w8.png";
+import w9 from "./whatsapp-manager-api/w9.png";
+import w10 from "./whatsapp-manager-api/w10.png";
+import w11 from "./whatsapp-manager-api/w11.png";
+
 // hrms images
 import h1 from "./hrms/h1.png";
 import h2 from "./hrms/h2.png";
@@ -72,6 +85,7 @@ import tb2 from "./taxi/tb2.png";
 import us1 from "./url-short/us1.png";
 
 const images = {
+  whatsappManagerApi: [w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11],
   hrms: [
     h1,
     h2,

@@ -23,6 +23,33 @@ export function ProjectsSection() {
 
   const projects = [
     {
+      title: "WhatsApp API Manager",
+      description:
+        "A WhatsApp API management platform for connecting multiple accounts, sending messages, tracking delivery, and receiving real-time connection notifications through a secure dashboard.",
+      image: [...images.whatsappManagerApi],
+      technologies: [
+        "Vite",
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST API",
+        "Tailwind CSS",
+        "JWT Authentication",
+        "Baileys",
+        "Web Push API",
+        "Redux Toolkit",
+        "Redux Persist",
+        "Flowbite React",
+        "Lucide React",
+      ],
+      demoUrl: [
+        "https://whatsapp-api-manager.vercel.app",
+      ],
+      githubUrl: ["https://github.com/MohamedThawfeek/whatsapp-api-manager"],
+      featured: true,
+    },
+    {
       title: "Human Resource Management System",
       description:
         "An AI-powered, multi-tenant HRMS SaaS platform featuring employee management, attendance, leave tracking, and payroll processing. Includes recruitment, performance evaluation, role-based access control, and subscription management. Built with the MERN stack and AI-powered HR automation.",
@@ -64,7 +91,7 @@ export function ProjectsSection() {
         "REST API",
         "Tailwind CSS",
         "JWT Authentication",
-        "Role-Based Access Control (RBAC)",
+        "Role Based Access Control (RBAC)",
       ],
       demoUrl: ["https://task-manager-frontend-nine-sigma.vercel.app"],
       githubUrl: ["https://github.com/MohamedThawfeek/task-manager"],
